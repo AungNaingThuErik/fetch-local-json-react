@@ -15,6 +15,8 @@ root.render(
   <React.StrictMode>
     <Router>
         <App />
+        {/* <Movies/> */}
+        <Series/>
         <Routes>
         <Route path="/movies" element={<Movies />} />
           <Route path="/series" element={<Series />} />

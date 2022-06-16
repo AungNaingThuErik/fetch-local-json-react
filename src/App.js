@@ -18,37 +18,16 @@ export default function App() {
           <Card 
             title='Popular Movies'
             imageUrl ={moviePoster}
-            redirect= {Movies}
+            redirect= {<Movies />}
           />
           <Card 
             title='Popular Series'
             imageUrl ={seriesPoster}
-            redirect= {Series}
+            redirect= {<Series />}
           />
       </div>
     
-    {/* { console.log(data.entries)} */}
-    {
-     
-     data.entries && data.entries.length > 0 && 
-      data.entries.map(({title,description,programType,images}) => (
-        <div key={title} className='row'>
-          
-          <h1>{title}</h1>
-          <p>{description}</p>
-          <>
-          { programType == 'series' ? <img src={images['Poster Art'].url}/>
-            
-          :'' }
-          { console.log(images['Poster Art'].url)}
-          </>
-          {/* {(programType === 'series')
-            
-          } */}
-            {/* <img src={images.Poster Art.url} alt='images'/> */}
-          </div>
-      ))
-    }
+    
     </div>
   );
 }
