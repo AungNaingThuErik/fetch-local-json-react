@@ -16,13 +16,13 @@ root.render(
     <Router>
         <App />
         <Routes>
-          <Route path="/Movies" element={<Movies />} />
-          <Route path="/Series" element={<Series />} />
+        <Route path="/movies" element={<Movies />} />
+          <Route path="/series" element={<Series />} />
         </Routes>
     </Router>
     
   </React.StrictMode>
-  
+    
 );
 
 // If you want to start measuring performance in your app, pass a function

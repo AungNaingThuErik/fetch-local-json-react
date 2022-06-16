@@ -5,7 +5,6 @@ import movieList from "./local-json/sample.json"
 import moviePoster from "./assets/movie.jpg"
 import seriesPoster from "./assets/series.jpg"
 
-import {Router, Routes, Route, useNavigate} from 'react-router-dom';
 import Movies from './pages/movies';
 import Series from './pages/series';
 
@@ -19,10 +18,12 @@ export default function App() {
           <Card 
             title='Popular Movies'
             imageUrl ={moviePoster}
+            redirect= {Movies}
           />
           <Card 
             title='Popular Series'
             imageUrl ={seriesPoster}
+            redirect= {Series}
           />
       </div>
     
