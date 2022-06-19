@@ -1,0 +1,19 @@
+.popular-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+.card-list {
+    display: flex;
+    flex-direction: column;
+}
+.card-list-details {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+}
+
+.card-list img{
+    width: 200px;
+}

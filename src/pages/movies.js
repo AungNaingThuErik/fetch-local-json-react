@@ -1,30 +1,59 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState} from 'react';
 import movieList from "../local-json/sample.json"
-import Card from '../components/Card';
- 
-const Movies = () => {
+import CardPopUp from '../components/CardPopUp';
+import nullPoster from "../assets/null.jpg"
+import './styles.css'
+const Series = () => {
   const [data, setData]= useState(movieList);
 
+  //popup
+  const [isOpen, setIsOpen] = useState(false);
+ 
+  const togglePopup = () => {
+    setIsOpen(!isOpen);
+  }
   return (
-    <>
+    
+     <div className='popular-list'>
+
       { 
+      
       data.entries && data.entries.length > 0 && 
-        data.entries.map(({title,description,programType,images}) => (
-          <div key={title} className='row'>
-            { programType === 'movie' ?  
+        data.entries.map((props) => (
+          <div key={props.title} className='card-list'>
+            { props.programType === 'movie' ?  
               [
-                <h1>{title}</h1>,
-                <p>{description}</p>,
-                <img src={images['Poster Art'].url}/> 
+                props.images['Poster Art'].url
+                  ? <img src={props.images['Poster Art'].url}/>
+                  :  <img src={nullPoster}/>,
+                <input
+                    type="button"
+                    value={props.title}
+                    onClick={togglePopup}
+                />,
+                isOpen && 
+                <div className='card-list-details'>
+                <CardPopUp
+                  content={
+                  <>
+                     <img src={props.images['Poster Art'].url}/> 
+                     <h1>{props.title}</h1>
+                     <p>{props.description}</p>
+                  </>
+                  }
+                  handleClose={togglePopup}
+                />
+                </div>
               ]
               :
               '' }
-
-          </div>
+            </div>
+          
         ))
       }
-    </>
+    </div>
+
   );
 };
   
-export default Movies;
+export default Series;

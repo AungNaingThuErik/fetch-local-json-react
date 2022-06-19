@@ -8,7 +8,7 @@ const Home = (props) => {
   return (
     <>
      <h1>Popular Titles</h1>
-      <div className='popularTitle'>
+      <div className='popular-title'>
           <Card 
             title='Popular Movies'
             imageUrl ={moviePoster}
